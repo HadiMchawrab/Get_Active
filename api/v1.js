@@ -1,36 +1,46 @@
-import './v1/Methods.js';
-
 const express = require('express');
-
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Welcome to API v1');
-})
+(async () => {
+    const { getClubsNearLocation, getTrainersNearLocation } = await import('./v1/Methods.js');
 
-router.get('/clubs', (req, res) => {
-    try {location = req.query.location;} catch (error) {console.error('Error getting location:', error);throw error;}
-    const clubs = getClubsNearLocation(location);
-    res.json(clubs);
-})
+    router.get('/', (req, res) => {
+        res.send('Welcome to API v1');
+    });
 
-router.get('/trainers', (req, res) => {
-    try {location = req.query.location;} catch (error) {console.error('Error getting location:', error);throw error;}
-    const trainers = getTrainersNearLocation(location);
-    res.json(trainers);
-})
+    router.get('/clubs', async (req, res) => {
+        try {
+            const location = req.query.location;
+            const clubs = await getClubsNearLocation(location);
+            res.json(clubs);
+        } catch (error) {
+            console.error('Error getting clubs:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    });
 
-router.post('/register', (req, res) => {
-    try {user = req.body.user;} catch (error) {console.error('Error getting user:', error);throw error;}
-    try {type = req.body.type;} catch (error) {console.error('Error getting type:', error);throw error;}
-    try {registerUser(user, type);} catch (error) {console.error('Error registering user:', error);throw error;}
-    res.send('User registered successfully');    
-})
+    router.get('/trainers', async (req, res) => {
+        try {
+            const location = req.query.location;
+            const trainers = await getTrainersNearLocation(location);
+            res.json(trainers);
+        } catch (error) {
+            console.error('Error getting trainers:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    });
 
-router.post('/profile', (req, res) => {
-    try {user = req.body.user;} catch (error) {console.error('Error getting user:', error);throw error;}
-    try {getProfile(user);} catch (error) {console.error('Error getting profile:', error);throw error;}
-    res.send('Profile retrieved successfully');    
-})
+    router.post('/register', async (req, res) => {
+        try {
+            const user = req.body.user;
+            const type = req.body.type;
+            await registerUser(user, type);
+            res.send('User registered successfully');
+        } catch (error) {
+            console.error('Error registering user:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    });
+})();
 
 module.exports = router;

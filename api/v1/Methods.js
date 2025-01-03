@@ -1,5 +1,3 @@
-const db = require('./db');
-
 async function getClubsNearLocation(latitude, longitude, radius) {
     const query = `
         SELECT * FROM clubs
