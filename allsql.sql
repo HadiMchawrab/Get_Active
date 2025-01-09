@@ -1,5 +1,5 @@
 CREATE TABLE Compounds (
-    Compound_ID INT NOT NULL,
+    Compound_ID UUID NOT NULL,
     Address_1 VARCHAR(255) NOT NULL,
     Address_2 VARCHAR(255),
     City VARCHAR(100) NOT NULL,
@@ -16,8 +16,8 @@ CREATE TABLE Compounds (
 );
 
 CREATE TABLE Courts (
-    Area_ID INT NOT NULL,
-    Compound_ID INT NOT NULL,
+    Area_ID UUID NOT NULL,
+    Compound_ID UUID NOT NULL,
     C_Type VARCHAR(100) NOT NULL,
     Area_Number INT NOT NULL,
     Photos BLOB,
@@ -26,7 +26,7 @@ CREATE TABLE Courts (
     );
 
 CREATE TABLE User (
-    User_ID INT NOT NULL,
+    User_ID UUID NOT NULL,
     Email VARCHAR(100) NOT NULL,
     Phone_Nb VARCHAR(15) NOT NULL,
     F_Name VARCHAR(100) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE User (
 );
 
 CREATE TABLE Trainer (
-    Trainer_ID INT NOT NULL,
+    Trainer_ID UUID NOT NULL,
     Phone_Nb VARCHAR(15) NOT NULL,
     F_Name VARCHAR(100) NOT NULL,
     L_Name VARCHAR(100) NOT NULL,
@@ -53,8 +53,8 @@ CREATE TABLE Trainer (
 );
 
 CREATE TABLE Area_Reservations (
-    User_ID INT NOT NULL,
-    Area_ID INT NOT NULL,
+    User_ID UUID NOT NULL,
+    Area_ID UUID NOT NULL,
     Start_Time DATETIME NOT NULL,
     End_Time DATETIME,
     CONSTRAINT PK_Area_Reservations_User_ID PRIMARY KEY (User_ID, Area_ID, Start_Time),
@@ -63,9 +63,9 @@ CREATE TABLE Area_Reservations (
 
 );
 
-CREATE TABLE PT_Reservations (
-    User_ID INT NOT NULL,
-    Trainer_ID INT NOT NULL,
+CREATE TABLE GYM_Reservations (
+    User_ID UUID NOT NULL,
+    Trainer_ID INT,
     Start_Time DATETIME NOT NULL,
     End_Time DATETIME,
     Area_ID INT NOT NULL,
