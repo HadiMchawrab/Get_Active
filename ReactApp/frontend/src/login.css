@@ -1,0 +1,120 @@
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('login_page_picture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+} */
+
+.App-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('login_page_picture.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.login-card {
+  background: linear-gradient(to bottom, #504d53, #2575fc);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.login-logo {
+  background: white;
+  border-radius: 60%;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 1rem;
+  color: #6a11cb;
+}
+
+.login-form .input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid white; /* Only keep the lower border */
+  color: white; /* Change text color to white */
+  background-color: transparent; /* Make background transparent */
+  outline: none;
+  box-shadow: none; /* Remove box shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.input-field::placeholder {
+  color: white;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.login-btn {
+  background: white;
+  color: #6a11cb;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #f0f0f0;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+
+.link-button {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
