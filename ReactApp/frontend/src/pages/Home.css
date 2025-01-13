@@ -1,0 +1,60 @@
+.root {
+    flex-grow: 1;
+    font-family: 'Arial, sans-serif';
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light blue */
+}
+
+.appBar {
+    background-color: #1e88e5; /* Blue */
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.menuButton {
+    margin-right: 16px; /* Assuming theme.spacing(2) is 16px */
+}
+
+.section {
+    margin: 32px 0; /* Assuming theme.spacing(4) is 32px */
+}
+
+.card {
+    max-width: 345px;
+}
+
+.media {
+    height: 140px;
+}
+
+.footer {
+    padding: 24px 16px; /* Assuming theme.spacing(3, 2) is 24px 16px */
+    margin-top: auto;
+    background-color: #1e88e5; /* Blue */
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.listItem {
+    background: #ffeb3b; /* Yellow */
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardContainer {
+    background: #ce93d8; /* Light purple */
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
