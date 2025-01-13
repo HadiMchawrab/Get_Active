@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import Home from './home.js';
 import Login from './login.js';
 import Menu from './menu.js';
+// import { createClient } from '@supabase/supabase-js'
+// const supabase = createClient(process.env.Project_URL, process.env.Project_KEY)
 
 function App() {
   return (
