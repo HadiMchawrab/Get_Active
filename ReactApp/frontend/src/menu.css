@@ -1,0 +1,70 @@
+/* Header Styling */
+.menu{
+  background: linear-gradient(to bottom, orange,orange, rgb(227, 236, 97), rgb(206, 202, 145), white);
+}
+.menu-header {
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.menu-header h1 {
+  margin: 0;
+}
+
+.filter-input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.filter-input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 50%;
+  max-width: 200px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Card Grid Styling */
+.court-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem;
+  padding: 4rem;
+  justify-items: center;
+}
+
+/* Individual Card Styling */
+.court-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+  padding: 1rem;
+  
+}
+
+.court-card:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: 0.3s;
+  background: green;
+}
+
+.court-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.court-name {
+  font-size: 1.2rem;
+  color: #333;
+}
