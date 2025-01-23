@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './home.js';
 import Login from './login.js';
 import Menu from './menu.js';
-// import { createClient } from '@supabase/supabase-js'
-// const supabase = createClient(process.env.Project_URL, process.env.Project_KEY)
+import Profile from './profile.js';
+
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/menu" element={<Menu />} />        
+        <Route path="/menu" element={<Menu />} />      
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

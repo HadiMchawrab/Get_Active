@@ -1,6 +1,5 @@
-/* Header Styling */
 .menu{
-  background: linear-gradient(to bottom, orange,orange, rgb(227, 236, 97), rgb(206, 202, 145), white);
+  background: linear-gradient(to bottom, orange,orange,orange,  rgb(227, 236, 97), rgb(206, 202, 145), white);
 }
 .menu-header {
   background-color: orange;
@@ -67,4 +66,27 @@
 .court-name {
   font-size: 1.2rem;
   color: #333;
+}
+
+.profile-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 2px solid orange;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: rgb(114, 97, 66);
+  color: white;
+}
+
+.menu-header {
+  position: relative; 
 }
