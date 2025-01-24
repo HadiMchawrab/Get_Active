@@ -1,4 +1,4 @@
-async function getClubsNearLocation(latitude, longitude, radius) {
+export const getClubsNearLocation = async (latitude, longitude, radius) => {
     const query = `
         SELECT * FROM clubs
         WHERE ST_Distance_Sphere(
@@ -17,7 +17,7 @@ async function getClubsNearLocation(latitude, longitude, radius) {
     }
 }
 
-async function getTrainersNearLocation(latitude, longitude, radius) {
+export const getTrainersNearLocation = async (latitude, longitude, radius) => {
     const query = `
         SELECT * FROM trainers
         WHERE ST_Distance_Sphere(
@@ -36,7 +36,7 @@ async function getTrainersNearLocation(latitude, longitude, radius) {
     }
 }
 
-async function registerUser(user, type) {
+export const registerUser = async (user, type) => {
     const query = `
         INSERT INTO ${type}s (name, email, phone, latitude, longitude)
         VALUES (?, ?, ?, ?, ?)
@@ -51,7 +51,7 @@ async function registerUser(user, type) {
     }
 }
 
-async function getProfile(user) {
+export const getProfile = async (user) => {
     const query = `
         SELECT * FROM users
         WHERE email = ?
@@ -66,8 +66,3 @@ async function getProfile(user) {
         throw error;
     }
 }
-
-module.exports = {
-    getClubsNearLocation,
-    getTrainersNearLocation
-};

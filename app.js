@@ -17,7 +17,7 @@ dotenv.config();
 var app = express();
 var port = 4000;
 
-const supabase = createClient(process.env.SUPA_API, process.env.SUPA_KEY)
+export const supabase = createClient(process.env.SUPA_API, process.env.SUPA_KEY)
 
 // view engine setup
 const __filename = fileURLToPath(import.meta.url);
