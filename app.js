@@ -1,17 +1,27 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import dotenv from 'dotenv';
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { createClient } from '@supabase/supabase-js';
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
+import indexRouter from './routes/index.js';
+import usersRouter from './routes/users.js';
+import apiRouter from './routes/api.js';
+
+dotenv.config();
 
 var app = express();
 var port = 4000;
 
+const supabase = createClient(process.env.SUPA_API, process.env.SUPA_KEY)
+
 // view engine setup
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -46,4 +56,4 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
