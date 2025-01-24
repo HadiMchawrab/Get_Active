@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import "./menu.css";
+import "../styles/menu.css";
 import { useNavigate } from "react-router-dom";
 
 function Menu() {
