@@ -60,7 +60,6 @@ CREATE TABLE Area_Reservations (
     CONSTRAINT PK_Area_Reservations_User_ID PRIMARY KEY (User_ID, Area_ID, Start_Time),
     CONSTRAINT FK_Area_Reservations_User_ID FOREIGN KEY (User_ID) REFERENCES User(User_ID),
     CONSTRAINT FK_Area_Reservations_Area_ID FOREIGN KEY (Area_ID) REFERENCES Courts(Area_ID)
-
 );
 
 CREATE TABLE GYM_Reservations (
